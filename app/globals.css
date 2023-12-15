@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 :root {
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
 }
+
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -18,4 +21,18 @@
 
 body {
 	color: rgb(var(--foreground-rgb));
+	
 }
+
+
+.nav-gradient-custom {
+	background: linear-gradient(0deg, #2374AB 80.26%, rgba(146, 95, 226, 0) 143.39%, #E2D4F7 143.39%);
+	
+  }
+
+  .bg-gradient-custom{
+	background: linear-gradient(245deg, #6DC1DC 14.2%, #F3F0FF 36.17%, #FFC2D8 71.28%, #FFD9BE 84.12%);
+
+	/* filter: blur(182px);  */
+}
+
