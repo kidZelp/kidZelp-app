@@ -13,6 +13,13 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    fontSize: {
+      'dash-font': '10.422px',
+      // Add your custom font sizes as needed
+    },
+    fontFamily: {
+      'poppins': ['Poppins', 'sans-serif']
+    },
   },
   plugins: [],
 }
