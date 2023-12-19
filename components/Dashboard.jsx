@@ -30,7 +30,7 @@ const Dashboard = () => {
 				</div>
 			</div>
 
-			<div className='flex mt-20 justify-center dashboard-gradient bg-opacity-10 rounded-xl p-10 py-20 text-white'>
+			<div className='flex mt-20 justify-center play-gradient bg-opacity-10 rounded-xl p-10 py-20 text-white border-4 border-solid border-purple-600'>
 				<div className='flex flex-col bg-blue-800 px-4 py-2 rounded-lg cursor-pointer'>
 					<Link href='/play-quiz-game'>
 						<p className='uppercase font-semibold text-[20px]'>

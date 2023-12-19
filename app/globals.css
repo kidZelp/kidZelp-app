@@ -22,6 +22,7 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+
 .nav-gradient-custom {
   background: linear-gradient(
     0deg,
