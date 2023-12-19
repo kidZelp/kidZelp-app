@@ -21,7 +21,7 @@ const Navbar = ({ onNavItemClick, render }) => {
         </div>
         <div>
           <ul>
-            <li className="flex text-dash-font flex-col gap-8 w-full">
+            <li className="flex p-1 bg-gray-800 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border  text-dash-font flex-col gap-8 w-full">
               <Link
                 href=""
                 onClick={() => handleItemClick("dashboard")}
@@ -34,6 +34,7 @@ const Navbar = ({ onNavItemClick, render }) => {
                   height="auto"
                   width="13"
                   alt="Dashboard Icon"
+				
                 />
                 Dashboard
               </Link>
@@ -98,9 +99,7 @@ const Navbar = ({ onNavItemClick, render }) => {
           </ul>
         </div>
       </div>
-      <div>
-        <p className="text-sm">Log Out</p>
-      </div>
+      
     </div>
   );
 };

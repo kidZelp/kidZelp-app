@@ -9,7 +9,7 @@ import Dashboard from "@/components/Dashboard";
 // import MarketPlace from "@/components/MarketPlace";
 // import DailyDairy from "@/components/DailyDairy";
 
-import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 export default function Home() {
   const [render, setRender] = useState("dashboard");
@@ -19,27 +19,28 @@ export default function Home() {
   };
 
   return (
-    <main className="text-black  bg-gradient-custom font-bold font-poppins  flex justify-between flex-row p-4 h-screen overflow-hidden">
-      <Navbar onNavItemClick={handleNavItemClick} render={render} />
+    <main className="text-black bg-gradient-custom font-bold font-poppins  flex justify-between flex-col  p-4 h-screen">
+      <UserMenu />
 
-      {/* *******************right section start ******************** */}
+      <div className="flex flex-row gap-5">
+        <Navbar onNavItemClick={handleNavItemClick} render={render} />
 
-      <div className="p-8 w-4/5 flex flex-col">
-        <UserMenu />
+        {/* *******************right section start ******************** */}
 
-        <section>
-          {render === "dashboard" && <Dashboard />}
-          {/* {render === "marketplace" && <MarketPlace />}
-          {render === "dailydairy" && <DailyDairy />}
-          {render === "pointsgrabber" && <PointsGrabber />} */}
-        </section>
+        <div className=" w-4/5 flex flex-col  justify-center">
+          <section>
+            {render === "dashboard" && <Dashboard />}
+            {/* {render === "marketplace" && <MarketPlace />}
+    {render === "dailydairy" && <DailyDairy />}
+    {render === "pointsgrabber" && <PointsGrabber />} */}
+          </section>
+        </div>
       </div>
 
       <TawkMessengerReact
         propertyId="65114be10f2b18434fda6950"
         widgetId="1hb5p0ql5"
       />
-
     </main>
   );
 }
