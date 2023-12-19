@@ -192,9 +192,7 @@ const PlayQuizGame = () => {
 
   return (
     <>
-      <div className="logo">
-        <img src={icon} width={40} alt="Heamen Logo" /> <a href="/">Heamen</a>
-      </div>
+
 
       <div className="question-card">
         {/* Current Question  */}
@@ -229,7 +227,7 @@ const PlayQuizGame = () => {
       </div>
       <div id="scroll"></div>
 
-   
+
     </>
   );
 };

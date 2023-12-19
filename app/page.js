@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 import UserMenu from "@/components/UserMenu";
 import Navbar from "@/components/Navbar";
@@ -19,8 +19,7 @@ export default function Home() {
   };
 
   return (
-    <main className="text-black bg-gradient-custom font-bold font-poppins  flex justify-between flex-col  p-4 h-screen">
-      <UserMenu />
+    <Fragment>
 
       <div className="flex flex-row gap-5">
         <Navbar onNavItemClick={handleNavItemClick} render={render} />
@@ -41,6 +40,6 @@ export default function Home() {
         propertyId="65114be10f2b18434fda6950"
         widgetId="1hb5p0ql5"
       />
-    </main>
+    </Fragment>
   );
 }

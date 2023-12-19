@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 
 import { ClerkProvider } from '@clerk/nextjs';
+import UserMenu from '@/components/UserMenu';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -15,7 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <main className="text-black bg-gradient-custom font-bold font-poppins  flex justify-between flex-col  p-4 h-screen">
+            <UserMenu />
+            {children}
+            
+          </main>
+        </body>
       </html>
     </ClerkProvider>
   );
