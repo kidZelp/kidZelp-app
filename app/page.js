@@ -5,9 +5,9 @@ import UserMenu from "@/components/UserMenu";
 import Navbar from "@/components/Navbar";
 
 import Dashboard from "@/components/Dashboard";
-import PointsGrabber from "@/components/PointsGrabber";
-import MarketPlace from "@/components/MarketPlace";
-import DailyDairy from "@/components/DailyDairy";
+// import PointsGrabber from "@/components/PointsGrabber";
+// import MarketPlace from "@/components/MarketPlace";
+// import DailyDairy from "@/components/DailyDairy";
 
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 

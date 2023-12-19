@@ -17,7 +17,7 @@ const Dashboard = () => {
 
 	return (
 		<>
-			<div className='flex mt-6 justify-between dashboard-gradient rounded-xl p-5 text-white hover:shadow-lg'>
+			<div className='flex flex-wrap mt-6 justify-between dashboard-gradient rounded-xl p-5 text-white hover:shadow-lg'>
 				<div className='flex flex-col gap-4'>
 					<div className='flex items-center gap-1'>
 						<p>🗓️</p>

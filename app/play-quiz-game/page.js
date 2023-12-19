@@ -193,7 +193,7 @@ const PlayQuizGame = () => {
   return (
     <>
       <div className="logo">
-        <img src={icon.src} width={40} alt="kidZelp Logo" /> <a href="/">kidZelp</a>
+        <img src={icon} width={40} alt="Heamen Logo" /> <a href="/">Heamen</a>
       </div>
 
       <div className="question-card">
@@ -229,20 +229,7 @@ const PlayQuizGame = () => {
       </div>
       <div id="scroll"></div>
 
-      {showResults && (
-        <div className="overlay">
-          {" "}
-          {/* Apply the overlay class */}
-          <div className="final-results">
-            {/* Your modal content */}
-            {/* <h1>YAY, {name.name}! You Did It</h1> */}
-            <h3>Guidelines For Guardians:</h3>
-            <p>{text}</p>
-
-            <a href="#">Back to Home</a>
-          </div>
-        </div>
-      )}
+   
     </>
   );
 };
