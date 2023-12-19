@@ -1,11 +1,17 @@
-import { Inter } from 'next/font/google';
+import {
+  Poppins
+} from 'next/font/google';
 import './globals.css';
 
 import { ClerkProvider } from '@clerk/nextjs';
 import UserMenu from '@/components/UserMenu';
 
 
-const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ["300", "400", "500"],
+
+});
 
 export const metadata = {
   title: 'Create Next App',
@@ -16,11 +22,11 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
-          <main className="text-black bg-gradient-custom font-bold font-poppins  flex justify-between flex-col  p-4 h-screen">
+        <body className={poppins.className}>
+          <main className="text-black bg-gradient-custom font-bold flex justify-between flex-col  p-4 h-screen">
             <UserMenu />
             {children}
-            
+
           </main>
         </body>
       </html>
