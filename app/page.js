@@ -29,9 +29,9 @@ export default function Home() {
 
         <section>
           {render === "dashboard" && <Dashboard />}
-          {render === "marketplace" && <MarketPlace />}
+          {/* {render === "marketplace" && <MarketPlace />}
           {render === "dailydairy" && <DailyDairy />}
-          {render === "pointsgrabber" && <PointsGrabber />}
+          {render === "pointsgrabber" && <PointsGrabber />} */}
         </section>
       </div>
 

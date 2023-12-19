@@ -46,7 +46,7 @@ const Navbar = ({ onNavItemClick, render }) => {
 								/>
 								Dashboard
 							</Link>
-							<Link
+							{/* <Link
 								href=''
 								onClick={() =>
 									handleItemClick("pointsgrabber")
@@ -64,7 +64,7 @@ const Navbar = ({ onNavItemClick, render }) => {
 									alt='Icon'
 								/>
 								Points Grabber
-							</Link>
+							</Link> */}
 							{/* <Link
 								href=''
 								onClick={() =>

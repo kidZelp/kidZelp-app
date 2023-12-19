@@ -193,7 +193,7 @@ const PlayQuizGame = () => {
   return (
     <>
       <div className="logo">
-        <img src={icon} width={40} alt="Heamen Logo" /> <a href="/">Heamen</a>
+        <img src={icon.src} width={40} alt="kidZelp Logo" /> <a href="/">kidZelp</a>
       </div>
 
       <div className="question-card">
