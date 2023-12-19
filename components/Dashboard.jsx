@@ -42,13 +42,10 @@ const Dashboard = () => {
 			>
 				<div className='flex flex-col gap-14 w-2/3'>
 					<p className='text-blue-800'>
-						Lorem ipsum dolor sit amet consectetur
-						adipisicing elit. Obcaecati inventore nisi
-						necessitatibus iusto delectus repudiandae
-						consectetur laudantium adipisci ea, nemo,
-						sapiente accusamus corporis id asperiores quia
-						nostrum beatae possimus vitae? Itaque quam
-						quos provident odio?
+						Let{"'"}s roll on in a video simulation-based
+						quiz model, where you get to immerse yourself
+						through realistic video-based scenario, where
+						your responses unfold your narrative story.
 					</p>
 					<Link href='/play-quiz-game'>
 						<div className='flex flex-col w-fit bg-blue-800 px-4 py-2 rounded-lg cursor-pointer items-end hover:bg-blue-900 hover:shadow-lg'>
