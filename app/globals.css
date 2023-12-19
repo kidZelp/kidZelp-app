@@ -53,3 +53,8 @@ body {
 	opacity: 0.5; /* Adjust the opacity as needed */
 	backdrop-filter: blur(100px); /* Adjust the blur value to match the blur above */
   }
+
+  .dashboard-gradient{
+	background: linear-gradient(95.26deg, #A57BE7 36.61%, #EEB88B 58.89%, #05FFF0 100.27%);
+
+  }
