@@ -9,6 +9,8 @@ import PointsGrabber from "@/components/PointsGrabber";
 import MarketPlace from "@/components/MarketPlace";
 import DailyDairy from "@/components/DailyDairy";
 
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+
 export default function Home() {
   const [render, setRender] = useState("dashboard");
 
@@ -32,6 +34,12 @@ export default function Home() {
           {render === "pointsgrabber" && <PointsGrabber />}
         </section>
       </div>
+
+      <TawkMessengerReact
+        propertyId="65114be10f2b18434fda6950"
+        widgetId="1hb5p0ql5"
+      />
+
     </main>
   );
 }
