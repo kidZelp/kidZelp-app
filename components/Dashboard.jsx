@@ -17,9 +17,14 @@ const Dashboard = () => {
 
 	return (
 		<>
-			<div className='flex mt-6 justify-between dashboard-gradient rounded-xl p-5 text-white'>
-				<div className='flex flex-col'>
-					<p> December 14, 2023</p>
+			<div className='flex mt-6 justify-between dashboard-gradient rounded-xl p-5 text-white hover:shadow-lg'>
+				<div className='flex flex-col gap-4'>
+					<div className='flex items-center gap-1'>
+						<p>🗓️</p>
+						<p>
+							{new Date().toLocaleDateString("en-US")}
+						</p>
+					</div>
 					<p>
 						Welcome back, {capitalize(user.username)} !{" "}
 					</p>
@@ -31,7 +36,10 @@ const Dashboard = () => {
 				</div>
 			</div>
 
-			<div className='flex mt-20 justify-between items-end play-gradient bg-opacity-10 rounded-xl p-10 py-20 text-white border-4 border-solid border-purple-600'>
+			<div
+				className='flex mt-20 justify-between items-end play-gradient bg-opacity-10 rounded-xl p-10 py-20 text-white border-4 border-solid border-purple-600 shadow-lg hover:shadow-xl
+      '
+			>
 				<div className='flex flex-col gap-14 w-2/3'>
 					<p className='text-blue-800'>
 						Lorem ipsum dolor sit amet consectetur
@@ -43,7 +51,7 @@ const Dashboard = () => {
 						quos provident odio?
 					</p>
 					<Link href='/play-quiz-game'>
-						<div className='flex flex-col w-fit bg-blue-800 px-4 py-2 rounded-lg cursor-pointer items-end'>
+						<div className='flex flex-col w-fit bg-blue-800 px-4 py-2 rounded-lg cursor-pointer items-end hover:bg-blue-900 hover:shadow-lg'>
 							<p className='uppercase font-semibold text-[20px]'>
 								Click to play
 							</p>
