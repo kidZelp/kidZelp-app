@@ -14,7 +14,7 @@ const Navbar = ({ onNavItemClick, render }) => {
   };
 
   return (
-    <div className="hidden text-white p-6 md:flex w-56 items-center h-100 flex-col gap-1 nav-gradient-custom justify-between rounded-2xl">
+    <div className=" text-white p-6 md:flex w-56 items-center h-screen flex-col gap-1 nav-gradient-custom justify-between rounded-2xl">
       <div className="flex flex-col gap-6 ">
         <div>
           <Image src={logo} width="90" height="auto" alt="logo image" />

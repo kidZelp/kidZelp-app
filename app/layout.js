@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={poppins.className}>
-          <main className="text-black bg-gradient-custom font-bold flex justify-between flex-col  p-4 h-screen">
+          <main className="text-black bg-gradient-custom font-bold flex justify-between flex-col  p-4 h-auto">
             <UserMenu />
             {children}
           </main>
