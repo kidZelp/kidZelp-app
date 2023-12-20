@@ -10,6 +10,9 @@ import Dashboard from "@/components/Dashboard";
 // import DailyDairy from "@/components/DailyDairy";
 
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import { useRouter } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
+import { isTeacher } from "@/lib/isTeacher";
 
 export default function Home() {
   const [render, setRender] = useState("dashboard");
@@ -18,9 +21,19 @@ export default function Home() {
     setRender(component);
   };
 
+  const { user, isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
+
+  if (!isLoaded || !isSignedIn) {
+    return null;
+  }
+
+  if (isTeacher(user.id)) {
+    router.push("/guardian");
+  }
+
   return (
     <Fragment>
-
       <div className="flex flex-row gap-5">
         <Navbar onNavItemClick={handleNavItemClick} render={render} />
 

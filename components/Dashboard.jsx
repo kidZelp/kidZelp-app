@@ -44,7 +44,7 @@ const Dashboard = () => {
             where your responses unfold your narrative story.
           </p>
           <Link href="/play-quiz-game">
-            <div className="flex dashboard-gradient flex-col w-fit bg-blue-800 px-4 py-2 rounded-lg cursor-pointer items-end hover:bg-blue-900 hover:shadow-lg">
+            <div className="flex dashboard-gradient flex-col w-fit bg-blue-800 px-4 py-2 rounded-lg cursor-pointer items-end  ">
               <p className="  font-semibold text-[18px]">
                 Click to Play
               </p>
