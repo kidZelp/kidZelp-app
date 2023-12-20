@@ -145,9 +145,38 @@ const PlayQuizGame = () => {
     }
   };
 
+  async function submitForm(data) {
+    const res = await fetch("/api/submit-score", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    if (!res.ok) {
+      console.error("Something went wrong");
+    } else {
+      console.log("Form Submitted!");
+    }
+  }
+
   useEffect(() => {
     if (showResults) {
-      scores();
+      try {
+        submitForm({
+          name: "Shriansh",
+          helpingAttitude: 20,
+          sharingAttitude: 10,
+          cooperation: 25,
+          total: 55,
+        });
+
+      } catch (err) {
+        console.log(err);
+      }
     }
   }, [showResults]);
 
