@@ -179,8 +179,8 @@ const PlayQuizGame = () => {
 
   const questions = [
     {
-      src: "https://ik.imagekit.io/wellnesswards/scene1.mp4?updatedAt=1695668108651",
-      text: "Q. What will Shreya do?",
+      src: "https://ik.imagekit.io/wellnesswards/scene1.mp4?updatedAt=1703065679031",
+      text: "Q.1 What will Shreya do?",
       options: [
         {
           id: 0,
@@ -193,7 +193,7 @@ const PlayQuizGame = () => {
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE2.mp4?updatedAt=1695668109072",
-      text: "Q. What should Shreya do?",
+      text: "Q.2 What should Shreya do?",
       options: [
         {
           id: 0,
@@ -206,7 +206,7 @@ const PlayQuizGame = () => {
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE3.mp4?updatedAt=1695668109044",
-      text: "Q. How will Shreya respond?",
+      text: "Q.3 How will Shreya respond?",
       options: [
         { id: 0, text: "1. She is tired and wants to stay alone." },
         { id: 1, text: "2. She shouts at her friends for forcing her." },
@@ -216,7 +216,7 @@ const PlayQuizGame = () => {
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE4.mp4?updatedAt=1695668109047",
-      text: "Q. Now what will Shreya do?",
+      text: "Q.4 Now what will Shreya do?",
       options: [
         { id: 0, text: "1.She will refuse to give her notebook." },
         {
@@ -235,7 +235,7 @@ const PlayQuizGame = () => {
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE5.mp4?updatedAt=1695668109518",
-      text: "Q. How will she ask her classmates to join her?",
+      text: "Q.5 How will she ask her classmates to join her?",
       options: [
         { id: 0, text: "1.Politely, she will ask all of her friends." },
         { id: 1, text: "2.She will force each friend to join the team." },
@@ -251,7 +251,7 @@ const PlayQuizGame = () => {
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE6.mp4?updatedAt=1695668109490",
-      text: "Q. Will she offer the seat to that sick student?",
+      text: "Q.6 Will she offer the seat to that sick student?",
       options: [
         { id: 0, text: "1.Yes" },
         { id: 1, text: "2.No" },
@@ -259,10 +259,8 @@ const PlayQuizGame = () => {
     },
   ];
 
-
   return (
     <>
-
       <div className="container m-6/12">
         <div className="question-card m-10">
           {/* Current Question  */}
@@ -278,11 +276,11 @@ const PlayQuizGame = () => {
             ></video>
           </div>
 
-
           <div>
-            <div
-              className="flex flex-row justify-between items-center">
-              <h3 className="text-center text-[25px] py-5">{questions[currentQuestion].text}</h3>
+            <div className="flex flex-row justify-between items-center">
+              <h3 className="text-center text-[25px] py-5">
+                {questions[currentQuestion].text}
+              </h3>
             </div>
 
             {/* List of possible answers  */}
@@ -297,7 +295,6 @@ const PlayQuizGame = () => {
                         bg-gradient-to-l from-[#FEE4EC] to-[#C3E5F0]
                         ${videoEnded ? "option" : "option disabled"}
                       `}
-
                     >
                       {option.text}
                     </li>
@@ -309,8 +306,6 @@ const PlayQuizGame = () => {
         </div>
         <div id="scroll"></div>
       </div>
-
-
     </>
   );
 };
