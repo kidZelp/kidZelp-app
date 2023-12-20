@@ -150,6 +150,7 @@ const PlayQuizGame = () => {
         setVideoEnded(true);
       });
     }
+
     // Clean up the event listener when the component unmounts
     return () => {
       if (videoRef.current) {
@@ -159,6 +160,42 @@ const PlayQuizGame = () => {
       }
     };
   }, []);
+
+  
+  async function submitForm(data) {
+    const res = await fetch("/api/submit-score", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    if (!res.ok) {
+      console.error("Something went wrong");
+    } else {
+      console.log("Form Submitted!");
+    }
+  }
+
+  useEffect(() => {
+    if (showResults) {
+      try {
+        submitForm({
+          name: `${localStorage.getItem("user")}`,
+          helpingAttitude: score.parameter1,
+          sharingAttitude: score.parameter2,
+          cooperation: score.parameter3,
+          total: score.parameter1+score.parameter2+score.parameter3,
+        });
+
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }, [showResults]);
 
   // const calculateResult = () => {
   //   // Logic to calculate result based on the three parameters
@@ -275,6 +312,8 @@ const PlayQuizGame = () => {
               src={questions[currentQuestion].src}
             ></video>
           </div>
+
+
 
           <div>
             <div className="flex flex-row justify-between items-center">
