@@ -193,8 +193,8 @@ const PlayQuizGame = () => {
   return (
     <>
 
-
-      <div className="question-card">
+<div></div>
+      <div className="question-card m-10">
         {/* Current Question  */}
 
         <div className="story-video">
@@ -208,10 +208,13 @@ const PlayQuizGame = () => {
           ></video>
         </div>
 
-        <h3 className="question-text">{questions[currentQuestion].text}</h3>
+
+  <div className="backdrop-blur-sm ">
+        <h3 className="text-center    ">{questions[currentQuestion].text}</h3>
 
         {/* List of possible answers  */}
-        <ul>
+        <div className="">
+        <ul className="flex flex-row flex-wrap gap-5 justify-center">
           {questions[currentQuestion].options.map((option) => {
             return (
               <li
@@ -224,6 +227,8 @@ const PlayQuizGame = () => {
             );
           })}
         </ul>
+      </div>
+      </div>
       </div>
       <div id="scroll"></div>
 

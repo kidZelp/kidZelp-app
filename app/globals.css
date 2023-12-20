@@ -35,6 +35,9 @@ body,
 html {
   height: 100%;
 }
+.parentDashboardColor{
+    background: linear-gradient(3deg, #9CC7D5 51.21%, #E4AE3A 190.69%);
+}
 
 .bg-gradient-custom::before {
   content: "";
