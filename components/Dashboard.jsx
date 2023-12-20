@@ -67,7 +67,7 @@ const Dashboard = () => {
       <div className="flex mt-20 justify-between  flex-wrap bg-opacity-10 rounded-xl p-5 py-20 text-white border-4  shadow-lg hover:shadow-xl  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-25 border border-gray-100">
         <div className="flex flex-col gap-14 w-2/3">
           <p className="text-blue-800">
-            Let's roll on in a video simulation-based quiz model, where you get
+            Lets roll on in a video simulation-based quiz model, where you get
             to immerse yourself through a realistic video-based scenario, where
             your responses unfold your narrative story. <br></br>
 
@@ -194,7 +194,7 @@ const Dashboard = () => {
                         type="submit"
                         className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline w-full"
                       >
-                        Let's Play!
+                        Lets Play!
                       </button>
                     </div>
                   </form>
