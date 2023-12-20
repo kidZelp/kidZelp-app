@@ -69,7 +69,9 @@ const Dashboard = () => {
           <p className="text-blue-800">
             Let's roll on in a video simulation-based quiz model, where you get
             to immerse yourself through a realistic video-based scenario, where
-            your responses unfold your narrative story.
+            your responses unfold your narrative story. <br></br>
+
+            Once you enter in this immersive video-based quiz game, you will be presented with various video-based scenarios and situations. Based upon your understanding of the situation-based games, you will now have to select the most suitable option according to your intuition.
           </p>
 
           <div
