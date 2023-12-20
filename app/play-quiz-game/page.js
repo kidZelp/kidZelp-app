@@ -193,7 +193,7 @@ const PlayQuizGame = () => {
   return (
     <>
 
-<div className="container">
+<div className="container m-6/12">
       <div className="question-card m-10">
         {/* Current Question  */}
 

@@ -31,12 +31,12 @@
   
     background-color: #138bee;
     height: 100px;
-    font-weight: 900;
+   
     color: rgb(0, 0, 0);
     border: 1px solid rgb(0, 0, 0);
     /* border: 3px solid #eed113; */
     border-radius: 8px;
-    font-size: 25px;
+    font-size: 20px;
     transition: 0.2s ease-out;
   }
   .question-card li:hover{
@@ -57,7 +57,7 @@
     justify-content: center;
     color: #c599c0;
     font-size: 30px;
-    font-weight: bold;
+ 
     text-align: center;
     letter-spacing: 3px;
     margin-bottom: 0;
@@ -72,7 +72,9 @@
   .question-card {
     position: relative;
     border-radius: 10px;
-    overflow: hidden;
+    /* overflow: hidden; */
+    height: 130vh;
+    margin-bottom: 30px;
     background: rgba(255, 255, 255, 0.1); /* Background color with opacity */
     backdrop-filter: blur(10px); /* Apply background blur */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Border color with opacity */
