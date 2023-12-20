@@ -193,44 +193,51 @@ const PlayQuizGame = () => {
   return (
     <>
 
-<div className="container m-6/12">
-      <div className="question-card m-10">
-        {/* Current Question  */}
+      <div className="container m-6/12">
+        <div className="question-card m-10">
+          {/* Current Question  */}
 
-        <div className="story-video">
-          <video
-            ref={videoRef}
-            autoPlay
-            width={900}
-            controls
-            controlsList="nodownload"
-            src={questions[currentQuestion].src}
-          ></video>
+          <div className="story-video">
+            <video
+              ref={videoRef}
+              autoPlay
+              width={900}
+              controls
+              controlsList="nodownload"
+              src={questions[currentQuestion].src}
+            ></video>
+          </div>
+
+
+          <div>
+            <div
+              className="flex flex-row justify-between items-center">
+              <h3 className="text-center text-[25px] py-5">{questions[currentQuestion].text}</h3>
+            </div>
+
+            {/* List of possible answers  */}
+            <div className="">
+              <ul className="flex flex-row flex-wrap gap-5 justify-center">
+                {questions[currentQuestion].options.map((option) => {
+                  return (
+                    <li
+                      key={option.id}
+                      onClick={() => optionClicked(option.id)}
+                      className={`
+                        bg-gradient-to-l from-[#FEE4EC] to-[#C3E5F0]
+                        ${videoEnded ? "option" : "option disabled"}
+                      `}
+
+                    >
+                      {option.text}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
-
-
-  <div className="backdrop-blur-sm ">
-        <h3 className="text-center    ">{questions[currentQuestion].text}</h3>
-
-        {/* List of possible answers  */}
-        <div className="">
-        <ul className="flex flex-row flex-wrap gap-5 justify-center">
-          {questions[currentQuestion].options.map((option) => {
-            return (
-              <li
-                key={option.id}
-                onClick={() => optionClicked(option.id)}
-                className={videoEnded ? "option" : "option disabled"} // Disable options if the video has not ended
-              >
-                {option.text}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      </div>
-      </div>
-      <div id="scroll"></div>
+        <div id="scroll"></div>
       </div>
 
 

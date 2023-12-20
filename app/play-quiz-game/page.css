@@ -1,173 +1,170 @@
-.story-video{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin:20px auto;
-    border: black;
-    box-shadow: 0.5px 0.5px 50px black;
-    width: fit-content;
-    border-radius: 10px; 
+.story-video {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: 20px auto;
+	border: black;
+	box-shadow: 0.5px 0.5px 50px black;
+	width: fit-content;
+	border-radius: 10px;
 }
 
-.story-video video{
-    border-radius: 10px;
+.story-video video {
+	border-radius: 10px;
 }
 
-.option{
-  width: 48%;
+.option {
+	width: 48%;
 }
-
 
 .question-card ul {
-    list-style: none;
-    margin-right: 30px;
-    width: 100%;
-  }
-  
-  .question-card li {
-    box-shadow: 1px 1px 8px #000000;
-    padding: 5px 10px;
-  
-    background-color: #138bee;
-    height: 100px;
-   
-    color: rgb(0, 0, 0);
-    border: 1px solid rgb(0, 0, 0);
-    /* border: 3px solid #eed113; */
-    border-radius: 8px;
-    font-size: 20px;
-    transition: 0.2s ease-out;
-  }
-  .question-card li:hover{
-    cursor: pointer;
-    transform: scale(1.02);
-  }
-  
-  .question-text {
-    background-color: rgb(0, 0, 0);
-    border-radius: 8px;
-    height: 50px;
-    border: 100px;
-    width: 1000px;
-    margin: auto;
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #c599c0;
-    font-size: 30px;
- 
-    text-align: center;
-    letter-spacing: 3px;
-    margin-bottom: 0;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    height: 100vh; /* Set height to 100% of the viewport height */
-  }
-  
-  .question-card {
-    position: relative;
-    border-radius: 10px;
-    /* overflow: hidden; */
-    height: 130vh;
-    margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.1); /* Background color with opacity */
-    backdrop-filter: blur(10px); /* Apply background blur */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Border color with opacity */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for glass morphism effect */
-    padding: 20px; /* Add padding as needed */
-    width: 80%; /* Set the width of the container */
-    max-width: 1600px; /* Set a maximum width if needed */
-  }
-  
-  .backdrop-blur-sm {
-    backdrop-filter: blur(5px); /* Additional blur for the inner content */
-  }
+	list-style: none;
+	margin-right: 30px;
+	width: 100%;
+}
 
+.question-card li {
+	box-shadow: 0.4px 0.4px 2px #000000;
+	padding: 5px 10px;
 
-  
+	height: 70px;
 
-  .final-results{
-    height: 600px;
-    width: 80%;
-    background-color: #172438;
-    border-radius: 40px;
-    text-align: center;
-    left: 25%;
-    padding:30px;
-    border:1.5px solid rgb(0, 0, 0);
-    box-shadow: 0.5px 0.5px 5px #080808;
-    
+	color: rgb(0, 0, 0);
+	border: 0.1px solid rgb(0, 0, 0);
+	/* border: 3px solid #eed113; */
+	border-radius: 8px;
+	font-size: 16px;
+	transition: 0.2s ease-out;
+}
+.question-card li:hover {
+	cursor: pointer;
+	transform: scale(1.02);
+}
 
-  }
+.question-text {
+	background-color: rgb(0, 0, 0);
+	border-radius: 8px;
+	height: 50px;
+	border: 100px;
+	width: 1000px;
+	margin: auto;
 
-  .final-results h1{
-    color: #58ffdb;
-    font-weight: 900;
-    font-size: 70px;
-    text-decoration: none;
-    
-  }
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #c599c0;
+	font-size: 30px;
 
-  .final-results h3{
-    color:rgb(244, 110, 43);
-    font-size: 60px;
-    font-weight: 100;
-    margin-top: 30px;
-  }
+	text-align: center;
+	letter-spacing: 3px;
+	margin-bottom: 0;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	/* height: 100vh; */
+}
 
-  .final-results p{
-    color: white;
-    font-size: 2rem;
-    font-weight: 100;
-    margin-top: -30px;
-    margin-bottom: 60px;
-    }
+.question-card {
+	position: relative;
+	border-radius: 10px;
+	/* overflow: hidden; */
+	/* height: 130vh; */
+	margin-bottom: 30px;
+	background: rgba(
+		255,
+		255,
+		255,
+		0.1
+	); /* Background color with opacity */
+	backdrop-filter: blur(10px); /* Apply background blur */
+	border: 1px solid rgba(255, 255, 255, 0.2); /* Border color with opacity */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for glass morphism effect */
+	padding: 20px; /* Add padding as needed */
+	width: 80%; /* Set the width of the container */
+	max-width: 1600px; /* Set a maximum width if needed */
+}
 
-  .final-results a{
-    padding: 20px;
-    background-color: rgb(244, 110, 43);
-    color: rgb(0, 0, 0);
-    font-weight: 900;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius:20px;
-  }
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(1px);
-    z-index: 999; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  @media (max-width: 480px){
-    .story-video{
-      width: 100px;
-    }
-    .question-text{
-      position: relative;
-      right: 280px;
-      font-size: 1.5rem;
-      width: 400px;
-    }
-    .question-card li {
-     display: flex;
-     justify-content: start;
-     align-items: center;
-      width: 400px;
-      margin-left: -35px;
-      font-size: 0.9rem;
-    }
-  
+.backdrop-blur-sm {
+	backdrop-filter: blur(
+		5px
+	); /* Additional blur for the inner content */
+}
 
-  }
+.final-results {
+	height: 600px;
+	width: 80%;
+	background-color: #172438;
+	border-radius: 40px;
+	text-align: center;
+	left: 25%;
+	padding: 30px;
+	border: 1.5px solid rgb(0, 0, 0);
+	box-shadow: 0.5px 0.5px 5px #080808;
+}
+
+.final-results h1 {
+	color: #58ffdb;
+	font-weight: 900;
+	font-size: 70px;
+	text-decoration: none;
+}
+
+.final-results h3 {
+	color: rgb(244, 110, 43);
+	font-size: 60px;
+	font-weight: 100;
+	margin-top: 30px;
+}
+
+.final-results p {
+	color: white;
+	font-size: 2rem;
+	font-weight: 100;
+	margin-top: -30px;
+	margin-bottom: 60px;
+}
+
+.final-results a {
+	padding: 20px;
+	background-color: rgb(244, 110, 43);
+	color: rgb(0, 0, 0);
+	font-weight: 900;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 20px;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(1px);
+	z-index: 999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media (max-width: 480px) {
+	.story-video {
+		width: 100px;
+	}
+	.question-text {
+		position: relative;
+		right: 280px;
+		font-size: 1.5rem;
+		width: 400px;
+	}
+	.question-card li {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		width: 400px;
+		margin-left: -35px;
+		font-size: 0.9rem;
+	}
+}
