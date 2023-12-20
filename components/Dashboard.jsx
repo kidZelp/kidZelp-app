@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
 import Model from "@/assets/MODEL.svg";
 import { useRouter } from "next/navigation";
-
+import boy from "../assets/boy.svg"
 const Dashboard = () => {
   const { isLoaded, isSignedIn, user } = useUser();
   let [isOpen, setIsOpen] = useState(false);
@@ -59,8 +59,8 @@ const Dashboard = () => {
           <p>Always stay updated in your student portal</p>
         </div>
         <div className="flex ">
-          <Image src={cap} width={150} alt="img" />
-          <Image src={student} width={130} alt="img" />
+         
+          <Image src={boy} width={130} alt="img" />
         </div>
       </div>
 
