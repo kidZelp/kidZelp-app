@@ -6,6 +6,7 @@ import { useUser } from "@clerk/nextjs";
 import { capitalize } from "@/lib/util";
 import Link from "next/link";
 
+
 import Model from "@/assets/MODEL.svg";
 
 const Dashboard = () => {
@@ -43,7 +44,7 @@ const Dashboard = () => {
             where your responses unfold your narrative story.
           </p>
           <Link href="/play-quiz-game">
-            <div className="flex flex-col w-fit bg-blue-800 px-4 py-2 rounded-lg cursor-pointer items-end hover:bg-blue-900 hover:shadow-lg">
+            <div className="flex nav-gradient flex-col w-fit bg-blue-800 px-4 py-2 rounded-lg cursor-pointer items-end hover:bg-blue-900 hover:shadow-lg">
               <p className="  font-semibold text-[18px]">
                 Click to Play
               </p>

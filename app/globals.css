@@ -24,12 +24,8 @@ body {
 
 
 .nav-gradient-custom {
-  background: linear-gradient(
-    0deg,
-    #2374ab 80.26%,
-    rgba(146, 95, 226, 0) 143.39%,
-    #e2d4f7 143.39%
-  );
+  background: linear-gradient(0deg, #925FE2 80.26%, rgba(146, 95, 226, 0) 130.48%, #E2D4F7 143.39%);
+
 }
 
 .bg-gradient-custom {
@@ -65,10 +61,6 @@ html {
 }
 
 .dashboard-gradient {
-  background: linear-gradient(
-    95.26deg,
-    #a57be7 36.61%,
-    #eeb88b 58.89%,
-    #05fff0 100.27%
-  );
+  background: linear-gradient(0deg, #925FE2 80.26%, rgba(146, 95, 226, 0) 130.48%, #E2D4F7 143.39%);
+
 }
