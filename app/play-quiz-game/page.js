@@ -193,7 +193,7 @@ const PlayQuizGame = () => {
   return (
     <>
 
-<div></div>
+<div className="container">
       <div className="question-card m-10">
         {/* Current Question  */}
 
@@ -231,6 +231,7 @@ const PlayQuizGame = () => {
       </div>
       </div>
       <div id="scroll"></div>
+      </div>
 
 
     </>
