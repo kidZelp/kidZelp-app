@@ -4,6 +4,7 @@ import { UserButton } from "@clerk/nextjs";
 
 import { useUser } from "@clerk/nextjs";
 import { capitalize } from "@/lib/util";
+import Link from "next/link";
 
 const UserMenu = () => {
 	const { isLoaded, isSignedIn, user } = useUser();
@@ -15,7 +16,9 @@ const UserMenu = () => {
 	return (
 		<>
 			<div className='flex items-center justify-between gap-10 '>
-				<p className=''>KidZelp</p>
+				<Link href='/'>
+					<p className=''>KidZelp</p>
+				</Link>
 				<div className='flex font-bold text-sm items-center gap-6'>
 					<p>{/*{user.points} */} 100 points</p>
 					<div className='flex items-center gap-2'>

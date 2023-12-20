@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# kidZelp: Your Partner in Child Mental Wellness
 
-## Getting Started
+Welcome to [kidZelp](https://kidzelp-website.vercel.app), a Next.js application dedicated to supporting child mental wellness through innovative assessments and comprehensive support.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   [Introduction](#introduction)
+-   [Features](#features)
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Technologies Used](#technologies-used)
+-   [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Introduction
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+kidZelp is designed to be your partner in promoting child mental wellness by providing a platform for innovative assessments and personalized support. We understand the importance of nurturing a child's mental health from an early age, and kidZelp aims to make this process engaging and effective.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+-   **Innovative Assessments:** Utilize cutting-edge assessments designed specifically for child mental wellness.
+-   **Personalized Support:** Receive tailored recommendations and resources based on assessment results.
+-   **User-Friendly Interface:** A simple and intuitive interface for both parents and children.
+-   **Secure and Confidential:** Prioritize the security and confidentiality of user data.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run kidZelp locally, follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1.  Clone the repository:
 
-## Deploy on Vercel
+    ```bash
+    git clone https://github.com/kidZelp/kidZelp-app
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2.  Install dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```bash
+    cd kidZelp
+    npm install
+    ```
+
+3.  Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+    Visit http://localhost:3000 in your browser to access kidZelp.
+
+## Usage
+
+-   Navigate to the kidZelp website.
+-   Sign in or create an account.
+-   Give the assessments for your child.
+-   Connect with our chatbot to receive personalized recommendations and resources.
+
+## Technologies Used
+
+-   [Next.js](https://nextjs.org/)
+-   [React](https://reactjs.org/)
+-   [Tawk.to](https://www.tawk.to/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
