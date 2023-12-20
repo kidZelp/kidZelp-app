@@ -7,14 +7,45 @@ import { capitalize } from "@/lib/util";
 import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
 import Model from "@/assets/MODEL.svg";
+import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
   const { isLoaded, isSignedIn, user } = useUser();
   let [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    gender: "",
+  });
+
+  const router = useRouter();
 
   if (!isLoaded || !isSignedIn) {
     return null;
   }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    // Clear previous user data from local storage
+    localStorage.removeItem("user");
+
+    // Save the new form data to local storage
+    localStorage.setItem("user", JSON.stringify(formData));
+
+    // Close the dialog
+    setIsOpen(false);
+
+    router.push("/play-quiz-game");
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   return (
     <>
@@ -88,77 +119,83 @@ const Dashboard = () => {
                     Fill your details
                   </Dialog.Title>
 
-                  <form>
-      <div className="mb-6">
-        <label
-          htmlFor="email"
-          className="block text-gray-700 text-sm font-bold mb-2"
-        >
-          <i className="fas" />
-          Name
-        </label>
-        <div>
-          <input
-            required
-            type="text"
-            className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Enter your name"
-          />
-        </div>
-      </div>
-      <div className="mb-6">
-        <label
-          htmlFor="password"
-          className="block text-gray-700 text-sm font-bold mb-2"
-        >
-          <i />
-          Age
-        </label>
-        <div>
-        <input
-                required
-                type="number"
-                id="numericInput"
-                min="0"
-                max="100"
-                step="1"
-                inputMode="numeric"
-            className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Enter your age"
-          />
-        </div>
-      </div>
-      <div className="mb-6">
-  <label
-    htmlFor="gender"
-    className="block text-gray-700 text-sm font-bold mb-2"
-  >
-    <i />
-    Gender
-  </label>
-  <div>
-    <select
-      id="gender"
-      className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-    >
-      <option value="" disabled selected>Select your gender</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
-    </select>
-  </div>
-</div>
-      
-      <div className="flex items-center justify-center">
-      <Link href="/play-quiz-game">
-                      <p className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+                  <form onSubmit={onSubmit}>
+                    <div className="mb-6">
+                      <label
+                        htmlFor="name"
+                        className="block text-gray-700 text-sm font-bold mb-2"
+                      >
+                        Name
+                      </label>
+                      <div>
+                        <input
+                          required
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                          placeholder="Enter your name"
+                        />
+                      </div>
+                    </div>
+                    <div className="mb-6">
+                      <label
+                        htmlFor="age"
+                        className="block text-gray-700 text-sm font-bold mb-2"
+                      >
+                        Age
+                      </label>
+                      <div>
+                        <input
+                          required
+                          type="number"
+                          id="numericInput"
+                          name="age"
+                          value={formData.age}
+                          onChange={handleInputChange}
+                          min="0"
+                          max="100"
+                          step="1"
+                          inputMode="numeric"
+                          className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                          placeholder="Enter your age"
+                        />
+                      </div>
+                    </div>
+                    <div className="mb-6">
+                      <label
+                        htmlFor="gender"
+                        className="block text-gray-700 text-sm font-bold mb-2"
+                      >
+                        Gender
+                      </label>
+                      <div>
+                        <select
+                          id="gender"
+                          name="gender"
+                          value={formData.gender}
+                          onChange={handleInputChange}
+                          className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        >
+                          <option value="" disabled>
+                            Select your gender
+                          </option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <button
+                        type="submit"
+                        className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+                      >
                         Let's Play!
-                      </p>
-                    </Link>
-      </div>
-    </form>
-
-              
+                      </button>
+                    </div>
+                  </form>
                 </Dialog.Panel>
               </Transition.Child>
             </div>

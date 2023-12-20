@@ -180,11 +180,13 @@ const PlayQuizGame = () => {
     }
   }
 
+ const myArray = JSON.parse(localStorage.getItem('user'));
+
   useEffect(() => {
     if (showResults) {
       try {
         submitForm({
-          name: `${localStorage.getItem("user")}`,
+          name: `${myArray.name}`,
           helpingAttitude: score.parameter1,
           sharingAttitude: score.parameter2,
           cooperation: score.parameter3,
@@ -213,82 +215,82 @@ const PlayQuizGame = () => {
   //   // Repeat the logic for the other parameters (parameter2, parameter3)
   // };
 
-
+ 
   const questions = [
     {
       src: "https://ik.imagekit.io/wellnesswards/scene1.mp4?updatedAt=1703065679031",
-      text: "Q.1 What will Shreya do?",
+      text: `Q.1 What will ${myArray.name} do?`,
       options: [
         {
           id: 0,
-          text: "1. She thinks of helping the cat but she doesn't want to get punished.",
+          text: "1. He/She thinks of helping the cat but she doesn't want to get punished.",
         },
-        { id: 1, text: "2. She walks away." },
-        { id: 2, text: "3. She helps the cat and is thus late for school." },
-        { id: 3, text: "4. She calls someone else for the help." },
+        { id: 1, text: "2. He/She walks away." },
+        { id: 2, text: "3. He/She helps the cat and is thus late for school." },
+        { id: 3, text: "4. He/She calls someone else for the help." },
       ],
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE2.mp4?updatedAt=1695668109072",
-      text: "Q.2 What should Shreya do?",
+      text: `Q.2 What should ${myArray.name} do?`,
       options: [
         {
           id: 0,
-          text: "1. She is very hungry and doesn’t want to share her lunch.",
+          text: "1. He/She is very hungry and doesn’t want to share her lunch.",
         },
-        { id: 1, text: "2. She asks her friends to share their lunch." },
-        { id: 2, text: "3. She shares her lunch." },
-        { id: 3, text: "4. She buys something for her bench-mate." },
+        { id: 1, text: "2. He/She asks her friends to share their lunch." },
+        { id: 2, text: "3. He/She shares her lunch." },
+        { id: 3, text: "4. He/She buys something for her bench-mate." },
       ],
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE3.mp4?updatedAt=1695668109044",
-      text: "Q.3 How will Shreya respond?",
+      text: `Q.3 How will ${myArray.name} respond?`,
       options: [
-        { id: 0, text: "1. She is tired and wants to stay alone." },
-        { id: 1, text: "2. She shouts at her friends for forcing her." },
-        { id: 2, text: "3. She agrees to play Kho-Kho with her friends." },
-        { id: 3, text: "4. She ignores her friends." },
+        { id: 0, text: "1. He/She is tired and wants to stay alone." },
+        { id: 1, text: "2. He/She shouts at her friends for forcing her." },
+        { id: 2, text: "3. He/She agrees to play Kho-Kho with her friends." },
+        { id: 3, text: "4. He/She ignores her friends." },
       ],
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE4.mp4?updatedAt=1695668109047",
-      text: "Q.4 Now what will Shreya do?",
+      text: `Q.4 Now what will ${myArray.name} do?`,
       options: [
-        { id: 0, text: "1.She will refuse to give her notebook." },
+        { id: 0, text: "1.He/She will refuse to give her notebook." },
         {
           id: 1,
-          text: "2.She will ignore him & submit the notebook for checking.",
+          text: "2.He/She will ignore him & submit the notebook for checking.",
         },
         {
           id: 2,
-          text: "3.She will give him the notebook and ask to return her notebook fast.",
+          text: "3.He/She will give him the notebook and ask to return her notebook fast.",
         },
         {
           id: 3,
-          text: "4.She will scold him and submit the notebook afterwards.",
+          text: "4.He/She will scold him and submit the notebook afterwards.",
         },
       ],
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE5.mp4?updatedAt=1695668109518",
-      text: "Q.5 How will she ask her classmates to join her?",
+      text: `Q.5 How will ${myArray.name} ask her classmates to join her?`,
       options: [
         { id: 0, text: "1.Politely, she will ask all of her friends." },
-        { id: 1, text: "2.She will force each friend to join the team." },
+        { id: 1, text: "2.He/She will force each friend to join the team." },
         {
           id: 2,
-          text: "3.She will fight with her friends over the different team formation.",
+          text: "3.He/She will fight with her friends over the different team formation.",
         },
         {
           id: 3,
-          text: "4.She will complain the teacher and ask for the help.",
+          text: "4.He/She will complain the teacher and ask for the help.",
         },
       ],
     },
     {
       src: "https://ik.imagekit.io/wellnesswards/SCENE6.mp4?updatedAt=1695668109490",
-      text: "Q.6 Will she offer the seat to that sick student?",
+      text: `Q.6 Will ${myArray.name} offer the seat to that sick student?`,
       options: [
         { id: 0, text: "1.Yes" },
         { id: 1, text: "2.No" },
