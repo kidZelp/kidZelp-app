@@ -12,9 +12,9 @@ export default function GuardianPage() {
     return null;
   }
 
-  if (isTeacher(user.id)) {
-    router.push("/guardian");
+  if (!isTeacher(user.id)) {
+    router.push("/");
   }
 
-  return <div>Page</div>;
+  return <Fragment>jfgj</Fragment>;
 }
