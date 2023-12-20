@@ -3,8 +3,9 @@ import {
 } from 'next/font/google';
 import './globals.css';
 
-import { ClerkProvider } from '@clerk/nextjs';
+import { ClerkProvider, auth } from '@clerk/nextjs';
 import UserMenu from '@/components/UserMenu';
+import { isTeacher } from '@/lib/isTeacher';
 
 
 const poppins = Poppins({
@@ -19,6 +20,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const { userId } = auth();
+
+  if (isTeacher(userId)) {
+    //   return redirect("/guardian");
+  }
+
   return (
     <ClerkProvider>
       <html lang="en">
