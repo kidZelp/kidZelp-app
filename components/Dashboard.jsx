@@ -9,121 +9,164 @@ import { Dialog, Transition } from "@headlessui/react";
 import Model from "@/assets/MODEL.svg";
 
 const Dashboard = () => {
-	const { isLoaded, isSignedIn, user } = useUser();
-	let [isOpen, setIsOpen] = useState(false);
+  const { isLoaded, isSignedIn, user } = useUser();
+  let [isOpen, setIsOpen] = useState(false);
 
-	if (!isLoaded || !isSignedIn) {
-		return null;
-	}
+  if (!isLoaded || !isSignedIn) {
+    return null;
+  }
 
-	return (
-		<>
-			<div className='flex flex-wrap justify-between nav-gradient-custom rounded-xl p-5 text-white hover:shadow-lg'>
-				<div className='flex flex-col gap-4'>
-					<div className='flex items-center gap-1'>
-						<p>🗓️</p>
-						<p>
-							{new Date().toLocaleDateString("en-US")}
-						</p>
-					</div>
-					<p>
-						Welcome back, {capitalize(user.username)} !{" "}
-					</p>
-					<p>Always stay updated in your student portal</p>
-				</div>
-				<div className='flex '>
-					<Image src={cap} width={150} alt='img' />
-					<Image src={student} width={130} alt='img' />
-				</div>
-			</div>
+  return (
+    <>
+      <div className="flex flex-wrap justify-between nav-gradient-custom rounded-xl p-5 text-white hover:shadow-lg">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center gap-1">
+            <p>🗓️</p>
+            <p>{new Date().toLocaleDateString("en-US")}</p>
+          </div>
+          <p>Welcome back, {capitalize(user.username)} ! </p>
+          <p>Always stay updated in your student portal</p>
+        </div>
+        <div className="flex ">
+          <Image src={cap} width={150} alt="img" />
+          <Image src={student} width={130} alt="img" />
+        </div>
+      </div>
 
-			<div className='flex mt-20 justify-between  flex-wrap bg-opacity-10 rounded-xl p-5 py-20 text-white border-4  shadow-lg hover:shadow-xl  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-25 border border-gray-100'>
-				<div className='flex flex-col gap-14 w-2/3'>
-					<p className='text-blue-800'>
-						Let{"'"}s roll on in a video simulation-based
-						quiz model, where you get to immerse yourself
-						through a realistic video-based scenario,
-						where your responses unfold your narrative
-						story.
-					</p>
+      <div className="flex mt-20 justify-between  flex-wrap bg-opacity-10 rounded-xl p-5 py-20 text-white border-4  shadow-lg hover:shadow-xl  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-25 border border-gray-100">
+        <div className="flex flex-col gap-14 w-2/3">
+          <p className="text-blue-800">
+            Let's roll on in a video simulation-based quiz model, where you get
+            to immerse yourself through a realistic video-based scenario, where
+            your responses unfold your narrative story.
+          </p>
 
-					<div
-						className='flex dashboard-gradient flex-col w-fit bg-blue-800 px-4 py-2 rounded-lg cursor-pointer items-end'
-						onClick={() => setIsOpen(true)}
-					>
-						<p className='font-semibold text-[18px]'>
-							Click to Play
-						</p>
-					</div>
-				</div>
-				<Image src={Model.src} width={200} height={200} />
-			</div>
+          <div
+            className="flex dashboard-gradient flex-col w-fit bg-blue-800 px-4 py-2 rounded-lg cursor-pointer items-end"
+            onClick={() => setIsOpen(true)}
+          >
+            <p className="font-semibold text-[18px]">Click to Play</p>
+          </div>
+        </div>
+        <Image src={Model.src} width={200} height={200} />
+      </div>
 
-			<Transition appear show={isOpen} as={Fragment}>
-				<Dialog
-					as='div'
-					className='relative z-10'
-					onClose={() => setIsOpen(false)}
-				>
-					<Transition.Child
-						as={Fragment}
-						enter='ease-out duration-300'
-						enterFrom='opacity-0'
-						enterTo='opacity-100'
-						leave='ease-in duration-200'
-						leaveFrom='opacity-100'
-						leaveTo='opacity-0'
-					>
-						<div className='fixed inset-0 bg-black/25' />
-					</Transition.Child>
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog
+          as="div"
+          className="relative z-10"
+          onClose={() => setIsOpen(false)}
+        >
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black/25" />
+          </Transition.Child>
 
-					<div className='fixed inset-0 overflow-y-auto'>
-						<div className='flex min-h-full items-center justify-center p-4 text-center'>
-							<Transition.Child
-								as={Fragment}
-								enter='ease-out duration-300'
-								enterFrom='opacity-0 scale-95'
-								enterTo='opacity-100 scale-100'
-								leave='ease-in duration-200'
-								leaveFrom='opacity-100 scale-100'
-								leaveTo='opacity-0 scale-95'
-							>
-								<Dialog.Panel className='w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
-									<Dialog.Title
-										as='h3'
-										className='text-lg font-medium leading-6 text-gray-900'
-									>
-										Payment successful
-									</Dialog.Title>
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <Dialog.Title
+                    as="h1"
+                    className="mb-5 text-center bg-gradient-to-r text-transparent from-blue-500 to-purple-500 bg-clip-text "
+                  >
+                    Fill your details
+                  </Dialog.Title>
 
-									<div className='mt-2'>
-										<p className='text-sm text-gray-500'>
-											Your payment has been
-											successfully submitted.
-											We’ve sent you an email
-											with all of the details of
-											your order.
-										</p>
-									</div>
+                  <form>
+      <div className="mb-6">
+        <label
+          htmlFor="email"
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          <i className="fas" />
+          Name
+        </label>
+        <div>
+          <input
+            required
+            type="text"
+            className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter your name"
+          />
+        </div>
+      </div>
+      <div className="mb-6">
+        <label
+          htmlFor="password"
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          <i />
+          Age
+        </label>
+        <div>
+        <input
+                required
+                type="number"
+                id="numericInput"
+                min="0"
+                max="100"
+                step="1"
+                inputMode="numeric"
+            className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter your age"
+          />
+        </div>
+      </div>
+      <div className="mb-6">
+  <label
+    htmlFor="gender"
+    className="block text-gray-700 text-sm font-bold mb-2"
+  >
+    <i />
+    Gender
+  </label>
+  <div>
+    <select
+      id="gender"
+      className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    >
+      <option value="" disabled selected>Select your gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+</div>
+      
+      <div className="flex items-center justify-center">
+      <Link href="/play-quiz-game">
+                      <p className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+                        Let's Play!
+                      </p>
+                    </Link>
+      </div>
+    </form>
 
-									<div className='mt-4'>
-										<button
-											type='button'
-											className='inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2'
-											// TODO: Logic for navigating to the video page after login
-											onClick={() => {}}
-										>
-											Got it, thanks!
-										</button>
-									</div>
-								</Dialog.Panel>
-							</Transition.Child>
-						</div>
-					</div>
-				</Dialog>
-			</Transition>
-		</>
-	);
+              
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
+    </>
+  );
 };
 
 export default Dashboard;

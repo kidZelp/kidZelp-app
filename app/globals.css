@@ -24,7 +24,7 @@ body {
 
 
 .nav-gradient-custom {
-  background: linear-gradient(0deg, #925FE2 80.26%, rgba(146, 95, 226, 0) 130.48%, #E2D4F7 143.39%);
+	background: linear-gradient(to right, #3b82f6, #9333ea);
 
 }
 
@@ -64,6 +64,6 @@ html {
 }
 
 .dashboard-gradient {
-  background: linear-gradient(0deg, #925FE2 80.26%, rgba(146, 95, 226, 0) 130.48%, #E2D4F7 143.39%);
+  background: linear-gradient(to right, #3b82f6, #9333ea);
 
 }
