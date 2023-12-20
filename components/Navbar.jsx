@@ -99,7 +99,9 @@ const Navbar = ({ onNavItemClick, render }) => {
           </ul>
         </div>
       </div>
-      
+      <div>
+	Contact Us: +91875046798 ,  kidzelp@gmail.com
+	  </div>
     </div>
   );
 };
