@@ -1,16 +1,19 @@
 "use client";
-import React from "react";
-import { useState, useEffect, useRef } from "react";
-
+import React, { useState, useEffect, useRef } from "react";
 import "./page.css";
 import icon from "@/assets/Logo.png";
 
 const PlayQuizGame = () => {
-  const [secondsLeft, setSecondsLeft] = useState(10); // Set the initial countdown time
+  const [secondsLeft, setSecondsLeft] = useState(10);
   const [scrollToTarget, setScrollToTarget] = useState(false);
-
-  const [text, settext] = useState("");
+  const [text, setText] = useState("");
   const [videoEnded, setVideoEnded] = useState(false);
+  const [name, setName] = useState("");
+  const [score, setScore] = useState({
+    parameter1: 0,
+    parameter2: 0,
+    parameter3: 0,
+  });
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -36,9 +39,143 @@ const PlayQuizGame = () => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResults, setShowResults] = useState(false);
-  const [score, setScore] = useState(0);
   const videoRef = useRef(null);
-  const [name, setName] = useState("");
+
+
+
+  const optionClicked = (id) => {
+    if (videoEnded) {
+      updateScore(id);
+
+      if (currentQuestion + 1 < 6) {
+        setCurrentQuestion(currentQuestion + 1);
+        setVideoEnded(false);
+      } else {
+        setShowResults(true);
+      }
+    }
+  };
+
+  const updateScore = (id) => {
+    // Update scores based on the selected option for the first two questions only
+    if (currentQuestion <= 2) {
+      if (id === 0) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter1: prevScore.parameter1 + 1,
+        }));
+      } else if (id === 1) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter1: prevScore.parameter1 - 0,
+        }));
+      } else if (id === 2) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter1: prevScore.parameter1 + 2,
+        }));
+      } else if (id === 3) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter1: prevScore.parameter1 + 3,
+        }));
+      }
+    } else if(2>=currentQuestion<=4){
+      // For other questions, update parameters as needed
+      if (id === 0) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter2: prevScore.parameter2 + 0,
+        }));
+      } else if (id === 1) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter2: prevScore.parameter2 + 3,
+        }));
+      } else if (id === 2) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter2: prevScore.parameter2 + 2,
+        }));
+      } else if (id === 3) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter2: prevScore.parameter2 - 0,
+        }));
+      }
+    }else if(currentQuestion>4){
+      if (id === 0) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter3: prevScore.parameter3 + 1,
+        }));
+      } else if (id === 1) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter3: prevScore.parameter3 + 2,
+        }));
+      } else if (id === 2) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter3: prevScore.parameter3 + 3,
+        }));
+      } else if (id === 3) {
+        setScore((prevScore) => ({
+          ...prevScore,
+          parameter3: prevScore.parameter3 - 0,
+        }));
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (showResults) {
+      console.log("Parameters Individual Score: ");
+      console.log(score.parameter1)
+      console.log(score.parameter2)
+      console.log(score.parameter3)
+    }
+  }, [showResults]);
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("user"));
+    if (items) {
+      setName(items);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.addEventListener("ended", () => {
+        setVideoEnded(true);
+      });
+    }
+    // Clean up the event listener when the component unmounts
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.removeEventListener("ended", () => {
+          setVideoEnded(true);
+        });
+      }
+    };
+  }, []);
+
+  // const calculateResult = () => {
+  //   // Logic to calculate result based on the three parameters
+  //   // Use the state values to decide the result text
+  //   // You can update the setText state based on the score values
+  //   // Example:
+  //   if (score.parameter1 >= 2) {
+  //     setText("Result for Parameter 1: High");
+  //   } else if (score.parameter1 >= 1) {
+  //     setText("Result for Parameter 1: Moderate");
+  //   } else {
+  //     setText("Result for Parameter 1: Low");
+  //   }
+
+  //   // Repeat the logic for the other parameters (parameter2, parameter3)
+  // };
+
 
   const questions = [
     {
@@ -122,73 +259,6 @@ const PlayQuizGame = () => {
     },
   ];
 
-  const optionClicked = (id) => {
-    // Increment the score
-    if (videoEnded) {
-      if (id === 0) {
-        setScore(score + 1);
-      } else if (id === 1) {
-        setScore(score + 2);
-      } else if (id === 2) {
-        setScore(score + 3);
-      } else if (id === 3) {
-        setScore(score + 4);
-      }
-      console.log(score);
-
-      if (currentQuestion + 1 < questions.length) {
-        setCurrentQuestion(currentQuestion + 1);
-        setVideoEnded(false);
-      } else {
-        setShowResults(true);
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (showResults) {
-      scores();
-    }
-  }, [showResults]);
-
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("user"));
-    if (items) {
-      setName(items);
-    }
-  }, []);
-
-  const scores = () => {
-    if (score >= 15) {
-      settext(
-        "Above Average Score Report:           Congratulations! Your results indicate that your child's prosocial behavior level is above average. This means that your child consistently demonstrates kindness, empathy, and a willingness to help others. They are likely to be sensitive to the needs and feelings of those around them and often engage in behaviors that contribute positively to their social interactions. Encourage and support their continued development in these areas to foster a strong sense of empathy and kindness."
-      );
-    } else if (8 >= score < 15) {
-      settext(
-        "Average Score Report:                  Your child's results indicate an average level of prosocial behavior. This suggests that they exhibit some prosocial behaviors but may also have room for improvement in certain areas. It's important to continue nurturing and reinforcing their positive behaviors while providing opportunities for them to develop empathy, sharing, and cooperation further. Encouraging open communication and teaching them the value of helping others can aid in their ongoing social and emotional development."
-      );
-    } else if (score < 8) {
-      settext(
-        "Below Average Score Report:               Hey! With the assessment of your child's prosocial level, we analyse that, it is below average. This indicates that your child has a comparatively Lower level of empathy, kindness, feeling of cooperation, and understanding for others emotions.These behaviour may cause difficulty in building positive relationships, bullying or aggressive behaviour, isolation or loneliness, self centrredness, etc. But there is nothing to worry as with proper guidance and support we can help you to develop prosocial behaviors by inculcating such behaviours like sharing, empathy, and cooperation. It's essential to work with your child to cultivate these skills through positive reinforcement, modeling, and opportunities for practicing kindness and consideration towards others."
-      );
-    }
-  };
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.addEventListener("ended", () => {
-        setVideoEnded(true);
-      });
-    }
-    // Clean up the event listener when the component unmounts
-    return () => {
-      if (videoRef.current) {
-        videoRef.current.removeEventListener("ended", () => {
-          setVideoEnded(true);
-        });
-      }
-    };
-  }, []);
 
   return (
     <>
